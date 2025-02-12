@@ -11,14 +11,12 @@ def emotion_detector(text_to_analyse):
 
     # find dominant emotion
     dominant_emotion = None
-    value_prev = 0.0
+    value_prev = 0.00
     emotions = response_json['emotionPredictions'][0]['emotion']
     for emotion, value in emotions.items():
-        if value_prev <= value:
+        if value >=  value_prev:
             dominant_emotion = emotion
-        else:
-            pass
-        value_prev = value
+            value_prev = value
     emotions["dominant_emotion"] = dominant_emotion
 
     return emotions

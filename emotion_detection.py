@@ -7,5 +7,5 @@ def emotion_detector(text_to_analyse):
     response = requests.post(url, json = obj, headers=header)
     return response.text
 
-#from emotion_detection import emotion_detector
+#from emotion_detection import emotion_detecto
 #emotion_detector("I love this new technology.")
